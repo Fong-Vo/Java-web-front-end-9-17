@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>Dashboard - Ace Admin</title>
+
+		<meta name="description" content="overview &amp; stats" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+		<!-- CSS -->
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<!-- JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<!-- Navbar start -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<li class="navbar-brand" style="color: white;">
+				<i class="fa fa-leaf"></i> <span>Admin</span>	
+			</li>
+			<button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fa fa-bars" aria-hidden="true"></i>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item dropdown" id="#chevron-nav">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-database" aria-hidden="true"></i>Product 
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="product.html">Product List</a>
+					</div>
+				  </li>
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-user" aria-hidden="true"></i>Customer 
+					</a>
+				  </li>
+				<li class="nav-item">
+					<a class="nav-link" href="#"><i class="fa fa-list-alt" aria-hidden="true"></i>My List</a>
+				</li>
+				<li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-users" aria-hidden="true"></i>Account 
+				  </a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-cogs" aria-hidden="true"></i>Configuration 
+					</a>
+				  </li>
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-users" aria-hidden="true" style="margin-right: 10px;"></i>User 
+					</a>
+				  </li>
+				  <li class="nav-item dropdown log-out-nav">
+					<div class="col-12">
+						<a class="dropdown-item" href="#"><i class="ace-icon fa fa-power-off"></i>Logout</a>
+					</div>
+				  </li>
+			  </ul>
+			</div>
+			<ul class="navbar-nav user-nav">
+				<a class="btn btn-right rounded-0 border-0 mr-3" id="chevron-nav" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<div class="row">
+						<div class="col-4 ml-2 mr-0">
+							<img class="rounded-circle img-nav" src="assets/images/avatars/user.jpg" alt="Jason's Photo">
+						</div>
+						<div class="col-4 px-0 user-info">
+							<span>
+								<small>WellCome,</small>
+								Phong
+							</span>
+						</div>
+						<div class="col-2">
+							<i class="fa fa-chevron-circle-down" style="font-size: 0.9rem;"></i>
+						</div>	
+					</div>
+				</a>
+				<div class="dropdown-menu dropdown-menu-right user-menu">
+					<a class="dropdown-item" href="#"><i class="ace-icon fa fa-cog"></i>Settings</a>
+					<a class="dropdown-item" href="#"><i class="ace-icon fa fa-user"></i>Profile</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#"><i class="ace-icon fa fa-power-off"></i>Logout</a>
+				</div>
+			  </ul>
+		</nav>
+		
+		<!-- Navbar end -->
+		<div class="breadcrumb">
+			<li class="breadcrumb-item"><i class="fa fa-home home-icon" aria-hidden="true"></i></li>
+			<li class="breadcrumb-item"><a href="#">Home</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Product Management</li>
+		</div>
+		<!-- Widget-box Start -->
+		<div class="widget-box">
+			<!-- Card -->
+			<div class="card">
+				<div class="card-header px-3 py-1">
+					<div class="row">
+						<div class="col-10">
+							<h5>Search</h5>
+						</div>
+						<div class="col-2">
+							<a class="widget-toolbar-right"data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+								<i class="fa fa-chevron-up" id="chevron"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="collapse show" id="collapseExample">
+					<div class="card card-body">
+						<form>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<h5>Product's Name</h5>
+							  			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Product's Name">
+									</div>
+									<div class="col-md-6">
+										<h5>Gross Floor Area(GFA)</h5>
+							  			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter GFA">					
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<h5>Select District</h5>
+										<select class="form-control" id="exampleFormControlSelect1">
+										  <option>--Select District--</option>
+										  <option>1</option>
+										  <option>2</option>
+										  <option>3</option>
+										  <option>4</option>
+										  <option>5</option>
+										</select>
+									</div>
+									<div class="col-md-4">
+										<h5>Ward</h5>
+							  			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Ward">					
+									</div>
+									<div class="col-md-4">
+										<h5>Street</h5>
+							  			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Street">					
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<h5>Number of Basements</h5>
+							  			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Basement Quantity">
+									</div>
+									<div class="col-md-4">
+										<h5>Direction</h5>
+							  			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Direction">					
+									</div>
+									<div class="col-md-4">
+										<h5>Categories</h5>
+							  			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Category">					
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-3">
+										<h5>Area from</h5>
+							  			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="50">
+									</div>
+									<div class="col-md-3">
+										<h5>Area to</h5>
+							  			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="100">					
+									</div>
+									<div class="col-md-3">
+										<h5>Rent from</h5>
+							  			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="50.000 euros">					
+									</div>
+									<div class="col-md-3">
+										<h5>Rent to</h5>
+							  			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="250.000 euros">					
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-4">
+										<h5>Manager's Name</h5>
+							  			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Manager's Name">
+									</div>
+									<div class="col-md-4">
+										<h5>Manager's Phone</h5>
+							  			<input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Manager's Phone">					
+									</div>
+									<div class="col-md-4">
+										<h5>Select Personnel in charge</h5>
+										<select class="form-control" id="exampleFormControlSelect2">
+										  <option>--Select--</option>
+										  <option>1</option>
+										  <option>2</option>
+										  <option>3</option>
+										  <option>4</option>
+										  <option>5</option>
+										</select>					
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-check">
+									<input type="checkbox" class="form-check-input">
+									<label class="form-check-label" for="exampleCheck1">Ground Floor</label>
+								</div>
+								<div class="form-check">
+									<input type="checkbox" class="form-check-input" id="exampleCheck2">
+									<label class="form-check-label" for="exampleCheck2">Whole house</label>
+								</div>
+								<div class="form-check">
+									<input type="checkbox" class="form-check-input" id="exampleCheck3">
+									<label class="form-check-label" for="exampleCheck3">Furnished</label>
+								</div>
+							</div>
+							<button type="button" class="btn btn-success px-5 py-2">Search</button>
+						  </form>
+					</div>
+				</div>
+			</div>
+			<!-- Sub-Btn -->
+			<div class="row sub-btn">
+				<div class="col-12">
+					<a type="button" class="btn btn-outline-dark" href="edit.html" data-toggle="tooltip" title='Add more'>
+							<i class="fa fa-plus-circle" aria-hidden="true" style="color: black;"></i>
+					</a>
+					<button type="button" class="btn btn-outline-danger" data-toggle="tooltip" title='Delete'>
+						<i class="fa fa-trash" aria-hidden="true"></i>
+					</button>
+				</div>
+			</div>
+			<!-- Table-->
+			<div class="widget-table">
+				<table class="table table-hover table-border">
+					<thead>
+					  <tr>
+						<th scope="col"><input type="checkbox" id="check-all"></th>
+						<th scope="col">Product's Name</th>
+						<th scope="col">Manager's Name</th>
+						<th scope="col">Empty Area</th>
+						<th scope="col">Service Charge</th>
+						<th scope="col">MG Price</th>
+						<th scope="col">Manipulation</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<th class="check-box"><input type="checkbox"></th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+						<td>1</td>
+						<td>Mark</td>
+						<td>
+							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+								<i class="fa fa-eye" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-newspaper-o" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</button>
+						</td>
+					  </tr>
+					  <tr>
+						<th class="check-box"><input type="checkbox"></th>
+						<td>Jacob</td>
+						<td>Thornton</td>
+						<td>@fat</td>
+						<td>1</td>
+						<td>Mark</td>
+						<td>
+							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+								<i class="fa fa-eye" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-newspaper-o" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</button>
+						</td>
+					  </tr>
+					  <tr>
+						<th class="check-box"><input type="checkbox"></th>
+						<td>Jacob</td>
+						<td>Thornton</td>
+						<td>@fat</td>
+						<td>1</td>
+						<td>Mark</td>
+						<td>
+							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+								<i class="fa fa-eye" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-newspaper-o" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</button>
+						</td>
+					  </tr>
+					  <tr>
+						<th class="check-box"><input type="checkbox"></th>
+						<td>Jacob</td>
+						<td>Thornton</td>
+						<td>@fat</td>
+						<td>1</td>
+						<td>Mark</td>
+						<td>
+							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+								<i class="fa fa-eye" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-newspaper-o" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</button>
+						</td>
+					  </tr>
+					  <tr>
+						<th class="check-box"><input type="checkbox"></th>
+						<td>Jacob</td>
+						<td>Thornton</td>
+						<td>@fat</td>
+						<td>1</td>
+						<td>Mark</td>
+						<td>
+							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+								<i class="fa fa-eye" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-newspaper-o" aria-hidden="true"></i>
+							</button>
+							<button type="button" class="btn btn-info" data-toggle="modal" title='Add more'>
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</button>
+						</td>
+					  </tr>
+					</tbody>
+				  </table>
+			</div>
+		</div>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				</div>
+				<div class="modal-body">
+				...
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+			</div>
+		</div>
+		<!-- Widget-box End -->
+		<!-- Sub-script-->
+		<script>
+			$(document).ready(function(){
+				$("#chevron").click(function(){
+					$("#chevron").toggleClass("fa-chevron-up fa-chevron-down");
+				});
+			});
+
+			$(document).ready(function(){
+				$("#chevron-nav").click(function(){
+					$("#chevron-nav i").toggleClass("fa-chevron-circle-down fa-chevron-circle-up");
+				});
+			});
+
+			$(document).ready(function(){
+				$("#check-all").click(function(){
+					if($(this). is(":checked")){
+						$(".check-box input").attr("checked","");
+					}
+					else if($(this). is(":not(:checked)")){
+						$(".check-box input").removeAttr("checked");
+					}
+				});
+			});
+		</script>
+		<!-- JQuery-->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+</html>
